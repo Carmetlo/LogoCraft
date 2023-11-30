@@ -3,7 +3,6 @@ class Shape {
        
 }
 
-
 render () {
 
 }
