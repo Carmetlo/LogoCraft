@@ -1,1 +1,1 @@
-<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg"><polygon points="150, 18 244, 182 56, 182" fill="Blue"/><text x="150" y="100" text-anchor="middle" dominant-baseline="middle" fill="Red">MAC</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg"><circle cx="75" cy="75" r="60" fill="red"/><text x="75" y="75" text-anchor="middle" dominant-baseline="middle" fill="blue">MAC</text></svg>
