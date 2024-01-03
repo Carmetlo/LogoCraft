@@ -58,5 +58,5 @@ async function run() {
     await generateSVG(userInput.text, userInput.textColor, userInput.shapeType, userInput.shapeColor);
     console.log('SVG generated!');
 }
-//Run the program. Use npm start to run.  Or node index.js
+//Run the program. Use node index.js
 run();
