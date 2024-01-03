@@ -2,7 +2,7 @@ const inquirer = require('inquirer');
 const {Triangle, Circle, Square} = require('/lib/shapes');
 const path = require ("path");
 const fs = require ("fs");
-
+//List of questions for user input
 async function getUserInput() {
     const userInput = await inquirer.prompt([
         {
@@ -34,7 +34,7 @@ async function getUserInput() {
     ])
      return userInput;
 }
-
+//Function to generate SVG, based on user input.  Writes to logo.svg in examples folder
 async function generateSVG(text, textColor, shapeType, shapeColor) {
     let svgString = "";
 
@@ -52,11 +52,11 @@ async function generateSVG(text, textColor, shapeType, shapeColor) {
     }
     fs.writeFileSync(path.join (__dirname,"/examples/","logo.svg"),svgString)
 }
-
+//Function to run the program.  Calls getUserInput and generateSVG.
 async function run() {
     const userInput = await getUserInput(); 
     await generateSVG(userInput.text, userInput.textColor, userInput.shapeType, userInput.shapeColor);
     console.log('SVG generated!');
 }
-
+//Run the program. Use npm start to run.  Or node index.js
 run();
