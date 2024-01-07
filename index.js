@@ -1,5 +1,5 @@
 const inquirer = require('inquirer');
-const {Triangle, Circle, Square} = require('/lib/shapes');
+const {Triangle, Circle, Square} = require('./lib/shapes');
 const path = require ("path");
 const fs = require ("fs");
 //List of questions for user input
@@ -50,7 +50,11 @@ async function generateSVG(text, textColor, shapeType, shapeColor) {
         const triangle = new Triangle (text,textColor,shapeColor)
         svgString = triangle.render () + triangle.insertShape () + triangle.insertText () + triangle.renderEnd ()
     }
-    fs.writeFileSync(path.join (__dirname,"/examples/","logo.svg"),svgString)
+
+    //Generates timestamps for file name so it doesn't overwrite previous logos
+    const timestamp = Date.now();
+    //Write to logo.svg in examples folder, using timestamp
+    fs.writeFileSync(path.join (__dirname,"/examples/",`logo_${timestamp}.svg`),svgString)
 }
 //Function to run the program.  Calls getUserInput and generateSVG.
 async function run() {
